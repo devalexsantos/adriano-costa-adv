@@ -13,6 +13,7 @@ module.exports = {
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
         'hero': "url('/assets/hero.jpg')",
         'adriano-costa': "url('/assets/adriano-costa.jpg')",
+        'call-to-action': "url('/assets/call-to-action-background.jpg')",
       },
     },
   },
