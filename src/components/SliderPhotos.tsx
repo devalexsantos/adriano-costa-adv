@@ -7,7 +7,7 @@ import Image from "next/image"
 export default function SliderPhotos(){
   const [ref] = useKeenSlider<HTMLDivElement>({
     mode: "free",
-      slides: { origin: "center", perView: 1.5, spacing: 10 },
+      slides: { origin: "center", perView: 2.5, spacing: 10 },
     breakpoints: {
       "(min-width: 400px)": {
         slides: { perView: 2.3, spacing: 5 },

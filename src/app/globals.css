@@ -6,5 +6,6 @@
 body {
   color: white;
   background-color: #F3F3F3;
+  -webkit-font-smoothing: antialiased;
 }
 
