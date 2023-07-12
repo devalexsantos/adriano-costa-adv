@@ -25,8 +25,8 @@ export default function HeaderLayout(){
                   Com atendimento abrangente na capital baiana e cidades circunvizinhas, prestamos serviço de advocacia de apoio, com equipe especializada em logística jurídica composta por jovens advogados e prepostos altamente capacitados.
                 </p>
                 <div className="w-full mt-8 flex flex-col sm:flex-row justify-start gap-3 items-center">
-                  <Link href="#areas-de-atuacao" className={`${inter.className} uppercase p-2 border rounded flex items-center justify-center text-center gap-2`}><IconArrowDownShort width={20} height={20} />Áreas de atuação</Link>
-                  <Link href="#" className={`${inter.className} uppercase p-2 bg-green-600 rounded flex items-center gap-2`}><IconWhatsapp width={20} height={20}/> WhatsApp</Link>
+                  <Link href="#areas-de-atuacao" className={`${inter.className} uppercase p-2 border rounded flex items-center justify-center text-center gap-2 w-full md:w-auto`}><IconArrowDownShort width={20} height={20} />Áreas de atuação</Link>
+                  <Link href="#" className={`${inter.className} uppercase p-2 bg-green-600 rounded flex items-center gap-2 w-full text-center justify-center md:w-auto`}><IconWhatsapp width={20} height={20}/> WhatsApp</Link>
                 </div>
             </div>
          </div>
