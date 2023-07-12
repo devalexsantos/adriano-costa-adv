@@ -1,14 +1,5 @@
 import './globals.css'
 import type { Metadata } from 'next'
-import { Lateef } from 'next/font/google'
-
-const lateef = Lateef(
-  { 
-    weight: ['400', '700'],
-    subsets: ['latin'],
-    variable: '--font-lateef', 
-  }
-)
 
 export const metadata: Metadata = {
   title: 'Adriano Costa',
@@ -22,7 +13,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={lateef.className}>{children}</body>
+      <body>{children}</body>
     </html>
   )
 }
