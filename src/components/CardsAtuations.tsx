@@ -4,7 +4,7 @@ import Image from "next/image";
 
 const inter = Inter(
     { 
-      weight: ['200', '700'],
+      weight: ['200', '400', '500', '700'],
       subsets: ['latin'],
     }
   )
@@ -30,7 +30,7 @@ const atuationsAreas = [
 
 export default function CardsAtuations(){
     return(
-        <div className="flex flex-col sm:flex-row gap-5 mt-10 items-center flex-wrap">
+        <div className="flex flex-col sm:flex-row m-auto gap-5 mt-10 items-center flex-wrap">
             {atuationsAreas.map((areas, index) => (
             <div key={index} className="text-[#3A3A3A] bg-white rounded object-cover my-3 rounded-xl shadow shadow-xl flex flex-col max-w-[350px] hover:bg-[#300202] hover:text-white hover:cursor-pointer transition-all">
                 <Image 
@@ -41,7 +41,7 @@ export default function CardsAtuations(){
                 />
                 <div className="p-4">
                     <h2 className="text-4xl">{areas.title}</h2>
-                    <p className="text-2xl leading-6">{areas.description}</p>
+                    <p className={`${inter.className} leading-6`}>{areas.description}</p>
                     <button className={`${inter.className} uppercase mt-3 flex items-center gap-2 hover:underline`}><IconArrowRight width={20} height={20} /> Saiba Mais</button>
                 </div>
             </div>
