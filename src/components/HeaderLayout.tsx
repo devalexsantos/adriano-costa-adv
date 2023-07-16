@@ -26,7 +26,7 @@ export default function HeaderLayout(){
                 </p>
                 <div className="w-full mt-8 flex flex-col sm:flex-row justify-start gap-3 items-center">
                   <Link href="#areas-de-atuacao" className={`${inter.className} uppercase p-2 border rounded flex items-center justify-center text-center gap-2 w-full md:w-auto`}><IconArrowDownShort width={20} height={20} />Áreas de atuação</Link>
-                  <Link href="#" className={`${inter.className} font-[500] uppercase p-2 bg-green-600 rounded flex items-center gap-2 w-full text-center justify-center md:w-auto`}><IconWhatsapp width={20} height={20}/> WhatsApp</Link>
+                  <Link href="https://api.whatsapp.com/send?phone=557187976341" target="_blank" className={`${inter.className} font-[500] uppercase p-2 bg-green-600 rounded flex items-center gap-2 w-full text-center justify-center md:w-auto`}><IconWhatsapp width={20} height={20}/> WhatsApp</Link>
                 </div>
             </div>
          </div>

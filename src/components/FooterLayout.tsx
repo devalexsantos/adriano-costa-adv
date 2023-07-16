@@ -11,7 +11,7 @@ const inter = Inter(
 export default function FooterLayout(){
     return(
         <div className={`${inter.className} bg-[#121212] py-10 flex justify-center items-center w-full`}>
-            <span>© COPYRIGHT - ADRIANO COSTA ADVOCACIA - DESENVOLVIDO POR <Link href="https://devalexsantos.com" target="_blank"><strong>AS DEVELOPER</strong></Link></span>
+            <span>© COPYRIGHT - ADRIANO COSTA ADVOCACIA - DESENVOLVIDO POR <Link className="underline" href="https://devalex.com.br" target="_blank"><strong>DEVALEX</strong></Link></span>
         </div>
     )
 }
