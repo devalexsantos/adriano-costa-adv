@@ -6,6 +6,7 @@ import FooterLayout from '@/components/FooterLayout'
 import HeaderLayout from '@/components/HeaderLayout'
 import Separator from '@/components/Separator'
 import SliderPhotos from '@/components/SliderPhotos'
+import WhatsAppIconFixed from '@/components/WhatsAppIconFixed'
 import { Lateef } from 'next/font/google'
 
 
@@ -20,6 +21,7 @@ const lateef = Lateef(
 export default function Home() {
   return (
     <main className={`flex flex-col ${lateef.className} items-center`}>
+      <WhatsAppIconFixed />
       <HeaderLayout />
       <Separator />
       <AboutLayout />

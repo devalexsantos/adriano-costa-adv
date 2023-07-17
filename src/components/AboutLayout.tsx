@@ -1,6 +1,7 @@
 import IconDividerVertical from "@/icons/IconDividerVertical";
 import { Inter } from "next/font/google";
 import Image from "next/image";
+import WhatsAppButton from "./WhatsAppButton";
 
 const inter = Inter(
   { 
@@ -47,6 +48,9 @@ export default function AboutLayout(){
                 Propor excelente custobenefício aos nossos clientes
               </p>
             </div>
+        </div>
+        <div className="w-full m-auto flex justify-center">
+              <WhatsAppButton />
         </div>
       </div>
     )
