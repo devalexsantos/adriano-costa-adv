@@ -7,7 +7,9 @@ import IconWhatsapp from "@/icons/IconWhatsApp";
 import { Inter } from "next/font/google";
 import Link from "next/link";
 import { useForm } from "react-hook-form";
-import { Resend } from 'resend';
+import emailjs from '@emailjs/browser';
+import ReCAPTCHA from 'react-google-recaptcha';
+import { useState } from "react";
 
 const inter = Inter(
     { 
@@ -23,26 +25,40 @@ const inter = Inter(
     message: string;
   };
 
-  const apiResend = process.env.NEXT_PUBLIC_RESEND_API as string
-  const resend = new Resend(apiResend);
 
 export default function ContactLayout(){
+  const [emailSended, setEmailSended] = useState(false);
+  const [isVerified, setVerified] = useState(false);
   const { register, handleSubmit, watch, formState: { errors } } = useForm<FormData>();
-  const onSubmit = handleSubmit(data => 
-      resend.emails.send({
-        from: 'onboarding@resend.dev',
-        to: 'devalexsantos@gmail.com',
-        subject: 'Nova mensagem do site',
-        html: `
-        <p>Opa Adriano, beleza? Você recebeu uma nova mensagem através do formulário de contato do seu site</p>
-        <p>Confira a mensagem abaixo:</p>
-        <strong>Nome:</strong> ${data.name}
-        <strong>E-mail:</strong> ${data.email}<br/>
-        <strong>Telefone:</strong> ${data.phone}<br/>
-        <strong>Mensagem:</strong> ${data.message}<br/>
-        `
-      })
-    );
+  
+  const onSubmit = (data: FormData) => {
+    if(isVerified){
+      emailjs.send(process.env.NEXT_PUBLIC_EMAILJS_SERVICE as string, 
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE as string, 
+        data, 
+        process.env.NEXT_PUBLIC_EMAILJS_APIKEY as string
+        )
+       .then((res) => {
+        setEmailSended(true)
+        console.log(res)
+       })
+      .catch(error => console.log(error.text))
+    } else {
+      alert('Por favor preencha o reCaptcha do Google')
+    }
+  }
+  
+  // const onSubmit = handleSubmit(data => 
+  //     emailjs.send("service_6lj4cc5", "template_oykp5ba", data, "3KjJJwPw5QY1yA2OB")
+  //     .then(res => console.log(res.text))
+  //     .catch(error => console.log(error.text))
+  //   );
+
+    const handleRecaptchaVerify = (response: string | null) => {
+      if (response) {
+        setVerified(true);
+      }
+    };
 
 
     return(
@@ -51,12 +67,17 @@ export default function ContactLayout(){
           <h1 className="mt-5 text-6xl leading-10 text-[#D7C03A] flex items-center">
             <IconDividerVertical /> Mande uma mensagem
           </h1>
-          <form onSubmit={onSubmit} className="mt-4 w-full max-w-[450px] flex flex-col gap-3 items-center justify-center p-6">
+          <form onSubmit={handleSubmit(onSubmit)} className="mt-4 w-full max-w-[450px] flex flex-col gap-3 items-center justify-center p-6">
             <input {...register("name")} required className="bg-[#3A0909] rounded w-full py-2 px-4 outline-none" placeholder='Nome' />
             <input {...register("email")} type="email" required className="bg-[#3A0909] rounded w-full py-2 px-4 outline-none" placeholder='E-mail' />
             <input {...register("phone")} required className="bg-[#3A0909] rounded w-full py-2 px-4 outline-none" placeholder='Telefone / WhatsApp' />
             <textarea {...register("message")} required className="bg-[#3A0909] rounded w-full py-2 px-4 outline-none h-[150px]" placeholder='Mensagem' />
+            <ReCAPTCHA
+              sitekey={process.env.NEXT_PUBLIC_GOOGLE_RECAPTCHA_SITE_KEY as string}
+              onChange={handleRecaptchaVerify}
+            />
             <button className="text-[#300202] py-1 px-4 bg-white rounded" type='submit'>ENVIAR</button>
+            {emailSended && <span>E-mail enviado com sucesso. Retornaremos o mais breve possível.</span>}
           </form>
         </div>
         <div className="w-full flex flex-col gap-6 items-center justify-center mt-6">

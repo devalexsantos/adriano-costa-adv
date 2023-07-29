@@ -1,5 +1,4 @@
 "use client"
-import Image from "next/image";
 import { motion } from "framer-motion"
 import Link from "next/link";
 
@@ -15,7 +14,7 @@ export default function WhatsAppIconFixed(){
             repeat: Infinity,
         }}
         >
-            <Image src="assets/whatsapp-svgrepo-com.svg" width={50} height={50} alt="Símbolo do WhatsApp"/>
+            <img src="assets/whatsapp-svgrepo-com.svg" width={50} height={50} alt="Símbolo do WhatsApp"/>
         </motion.div>
         </Link>
     )

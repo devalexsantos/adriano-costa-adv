@@ -1,4 +1,3 @@
-import IconArrowDownShort from '@/icons/IconArrowDownShort';
 import IconClose from '@/icons/IconClose';
 import IconDividerVertical from '@/icons/IconDividerVertical';
 import * as Dialog from '@radix-ui/react-dialog';

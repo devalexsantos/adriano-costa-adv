@@ -1,4 +1,3 @@
-import IconDividerVertical from "@/icons/IconDividerVertical";
 import CardsAtuations from "./CardsAtuations";
 import WhatsAppButton from "./WhatsAppButton";
 

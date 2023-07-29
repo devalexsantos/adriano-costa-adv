@@ -1,6 +1,4 @@
-import IconWhatsapp from "@/icons/IconWhatsApp";
 import { Inter } from "next/font/google";
-import Link from "next/link";
 import WhatsAppButton from "./WhatsAppButton";
 
 const inter = Inter(

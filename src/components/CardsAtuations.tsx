@@ -2,7 +2,6 @@
 
 import IconArrowRight from "@/icons/IconArrowRight";
 import { Inter } from "next/font/google";
-import Image from "next/image";
 
 import * as Dialog from '@radix-ui/react-dialog';
 import DialogModal from "./DialogModal";
@@ -48,7 +47,7 @@ export default function CardsAtuations(){
                     
             <Dialog.Trigger asChild>
             <div className="text-[#3A3A3A] bg-white rounded object-cover my-3 rounded-xl shadow shadow-xl flex flex-col max-w-[350px] hover:bg-[#300202] hover:text-white cursor-pointer transition-all">
-                <Image 
+                <img 
                     src={`/assets/areas-de-atuacao/${areas.image}`}
                     className="bg-cover object-cover"
                     width={350} height={224}

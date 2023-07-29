@@ -2,7 +2,6 @@
 
 import { useKeenSlider } from "keen-slider/react"
 import "keen-slider/keen-slider.min.css"
-import Image from "next/image"
 
 export default function SliderPhotos(){
   const [ref] = useKeenSlider<HTMLDivElement>({
@@ -22,13 +21,13 @@ export default function SliderPhotos(){
     return(
     <div ref={ref} className="keen-slider">
       <div className="keen-slider__slide number-slide1">
-        <Image src="/assets/galeria/adriano-costa-galeria-01.jpg" width={405} height={320} alt="Adriano Costa"/>
+        <img src="/assets/galeria/adriano-costa-galeria-01.jpg" width={405} height={320} alt="Adriano Costa"/>
       </div>
       <div className="keen-slider__slide number-slide2">
-        <Image src="/assets/galeria/adriano-costa-galeria-02.jpg" width={405} height={320} alt="Adriano Costa"/>
+        <img src="/assets/galeria/adriano-costa-galeria-02.jpg" width={405} height={320} alt="Adriano Costa"/>
       </div>
       <div className="keen-slider__slide number-slide2">
-        <Image src="/assets/galeria/adriano-costa-galeria-03.jpg" width={405} height={320} alt="Adriano Costa"/>
+        <img src="/assets/galeria/adriano-costa-galeria-03.jpg" width={405} height={320} alt="Adriano Costa"/>
       </div>
     </div>
     )

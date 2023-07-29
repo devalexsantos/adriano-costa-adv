@@ -1,6 +1,5 @@
 import IconDividerVertical from "@/icons/IconDividerVertical";
 import { Inter } from "next/font/google";
-import Image from "next/image";
 import WhatsAppButton from "./WhatsAppButton";
 
 const inter = Inter(
@@ -26,7 +25,7 @@ export default function AboutLayout(){
 
         <div className={`${inter.className} flex flex-col items-center sm:flex-row sm:items-start justify-center mt-10 gap-6`}>
             <div className="flex flex-col items-center justify-center max-w-[300px] text-center">
-              <Image className="mb-3" src="/assets/atendimento-personalizado.png" width={75} height={75} alt="Ícone de uma pessoa com um símbolo de um check." />
+              <img className="mb-3" src="/assets/atendimento-personalizado.png" width={75} height={75} alt="Ícone de uma pessoa com um símbolo de um check." />
               <h2 className="text-xl font-bold">Atendimento Personalizado</h2>
               <p className="text-sm leading-6">
                 Atendimento direcionado ao que você precisa, as suas reais necessidades.
@@ -34,7 +33,7 @@ export default function AboutLayout(){
             </div>
 
             <div className="flex flex-col items-center justify-center max-w-[300px] text-center">
-              <Image className="mb-3" src="/assets/controle-de-qualidade.png" width={75} height={75} alt="Ícone de uma pessoa com um símbolo de um check." />
+              <img className="mb-3" src="/assets/controle-de-qualidade.png" width={75} height={75} alt="Ícone de uma pessoa com um símbolo de um check." />
             <h2 className="text-xl font-bold">Controle de Qualidade</h2>
               <p className="text-sm leading-6">
                 Rigoroso controle de qualidade, proporcionando serviços em grau de excelência.
@@ -42,7 +41,7 @@ export default function AboutLayout(){
             </div>
 
             <div className="flex flex-col items-center justify-center max-w-[300px] text-center">
-              <Image className="mb-3" src="/assets/custo-beneficio.png" width={75} height={75} alt="Ícone de uma pessoa com um símbolo de um check." />
+              <img className="mb-3" src="/assets/custo-beneficio.png" width={75} height={75} alt="Ícone de uma pessoa com um símbolo de um check." />
             <h2 className="text-xl font-bold">Custo Benefício</h2>
               <p className="text-sm leading-6">
                 Propor excelente custobenefício aos nossos clientes
