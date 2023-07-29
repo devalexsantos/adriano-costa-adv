@@ -36,7 +36,7 @@ export default function ContactLayout(){
       emailjs.send(process.env.NEXT_PUBLIC_EMAILJS_SERVICE as string, 
         process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE as string, 
         data, 
-        process.env.NEXT_PUBLIC_EMAILJS_APIKEY as string
+        process.env.NEXT_PUBLIC_EMAILJS_APIKEY as string,
         )
        .then((res) => {
         setEmailSended(true)
@@ -47,12 +47,6 @@ export default function ContactLayout(){
       alert('Por favor preencha o reCaptcha do Google')
     }
   }
-  
-  // const onSubmit = handleSubmit(data => 
-  //     emailjs.send("service_6lj4cc5", "template_oykp5ba", data, "3KjJJwPw5QY1yA2OB")
-  //     .then(res => console.log(res.text))
-  //     .catch(error => console.log(error.text))
-  //   );
 
     const handleRecaptchaVerify = (response: string | null) => {
       if (response) {
