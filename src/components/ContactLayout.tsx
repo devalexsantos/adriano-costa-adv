@@ -29,7 +29,7 @@ const inter = Inter(
 export default function ContactLayout(){
   const [emailSended, setEmailSended] = useState(false);
   const [isVerified, setVerified] = useState(false);
-  const { register, handleSubmit, watch, formState: { errors } } = useForm<FormData>();
+  const { register, handleSubmit, reset, formState: { errors } } = useForm<FormData>();
   
   const onSubmit = (data: FormData) => {
     if(isVerified){
@@ -41,6 +41,7 @@ export default function ContactLayout(){
        .then((res) => {
         setEmailSended(true)
         console.log(res)
+        reset({ ...data })
        })
       .catch(error => console.log(error.text))
     } else {
