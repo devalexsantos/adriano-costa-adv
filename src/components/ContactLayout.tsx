@@ -40,8 +40,7 @@ export default function ContactLayout(){
         )
        .then((res) => {
         setEmailSended(true)
-        console.log(res)
-        reset({ ...data })
+        reset()
        })
       .catch(error => console.log(error.text))
     } else {
